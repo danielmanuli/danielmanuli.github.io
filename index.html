@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio website showcasing my skills and projects.">
+
+  <title>Your Name | Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 100px 0 80px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .hero .statement {
+      max-width: 760px;
+      margin: 0 auto 28px;
+      font-size: 1.25rem;
+      color: var(--muted);
+    }
+
+    .button-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 36px;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-height: 240px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.25rem;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .project-links {
+      margin-top: auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-links a {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box p {
+      color: var(--muted);
+      margin: 10px 0 20px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      padding: 30px 0 40px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero {
+        padding-top: 70px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <div class="container">
+
+      <nav>
+        <a class="logo" href="#home">Your Name</a>
+
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- PERSONAL STATEMENT -->
+    <section class="hero" id="home">
+
+      <div class="container">
+
+        <h1>Hello, I'm Your Name.</h1>
+
+        <p class="statement">
+          I am a motivated student and aspiring professional with an interest
+          in business, finance, technology, and solving real-world problems
+          through thoughtful analysis.
+        </p>
+
+        <div class="button-row">
+
+          <a class="btn btn-primary" href="#projects">
+            View My Projects
+          </a>
+
+          <!-- Replace YOUR-USERNAME with your GitHub username -->
+          <a
+            class="btn btn-secondary"
+            href="https://github.com/YOUR-USERNAME"
+            target="_blank"
+          >
+            GitHub Profile
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+
+      <div class="container">
+
+        <h2 class="section-title">Skills</h2>
+
+        <p class="section-subtitle">
+          A selection of technical and professional skills I bring
+          to academic and professional projects.
+        </p>
+
+        <div class="skills-grid">
+
+          <div class="skill">Microsoft Excel</div>
+
+          <div class="skill">Financial Analysis</div>
+
+          <div class="skill">Data Analysis</div>
+
+          <div class="skill">HTML & CSS</div>
+
+          <div class="skill">Problem Solving</div>
+
+          <div class="skill">Teamwork</div>
+
+          <div class="skill">Communication</div>
+
+          <div class="skill">Time Management</div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+
+      <div class="container">
+
+        <h2 class="section-title">Projects</h2>
+
+        <p class="section-subtitle">
+          Here are a few projects that demonstrate my skills,
+          coursework, and interests.
+        </p>
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJECT 1 -->
+
+          <article class="project-card">
+
+            <h3>Project 1: Financial Analysis</h3>
+
+            <p>
+              An Excel-based project analyzing financial data,
+              calculating key values, and presenting results
+              in a clear and organized format.
+            </p>
+
+            <div class="project-links">
+
+              <a
+                href="https://github.com/YOUR-USERNAME"
+                target="_blank"
+              >
+                View Project
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 2 -->
+
+          <article class="project-card">
+
+            <h3>Project 2: Personal Portfolio Website</h3>
+
+            <p>
+              A responsive personal portfolio website created
+              with HTML and CSS and published using GitHub Pages.
+            </p>
+
+            <div class="project-links">
+
+              <a
+                href="https://github.com/YOUR-USERNAME"
+                target="_blank"
+              >
+                View Code
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 3 -->
+
+          <article class="project-card">
+
+            <h3>Project 3: Course Project</h3>
+
+            <p>
+              Replace this description with another class,
+              work, or personal project. Explain what you created,
+              what tools you used, and what you learned.
+            </p>
+
+            <div class="project-links">
+
+              <a
+                href="https://github.com/YOUR-USERNAME"
+                target="_blank"
+              >
+                View Project
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <h2>Let's Connect</h2>
+
+          <p>
+            Feel free to visit my GitHub profile
+            to see more of my work and projects.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://github.com/YOUR-USERNAME"
+            target="_blank"
+          >
+            Visit My GitHub
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <p>
+        &copy; 2026 Your Name.
+        Built with HTML & CSS and hosted on GitHub Pages.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+</body>
+
+</html>
