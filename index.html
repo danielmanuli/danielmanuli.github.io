@@ -1,1 +1,1622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Daniel Manuli - Junior Finance major at Rutgers Business School-New Brunswick focused on private markets and alternative investing."
+  >
+
+  <title>Daniel Manuli | Finance Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #07111f;
+      --bg-soft: #0b1728;
+      --panel: rgba(16, 29, 48, 0.90);
+      --text: #f4f7fb;
+      --muted: #9ca9ba;
+      --line: rgba(255, 255, 255, 0.08);
+      --gold: #c9a96e;
+      --gold-light: #e2c58f;
+      --blue: #6f8fcf;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 15% 15%,
+          rgba(111, 143, 207, 0.10),
+          transparent 26%
+        ),
+        radial-gradient(
+          circle at 85% 10%,
+          rgba(201, 169, 110, 0.08),
+          transparent 20%
+        ),
+        linear-gradient(
+          180deg,
+          #07111f 0%,
+          #081523 55%,
+          #06101b 100%
+        );
+
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+
+      position: fixed;
+
+      inset: 0;
+
+      pointer-events: none;
+
+      opacity: 0.16;
+
+      background-image:
+        linear-gradient(
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 42px 42px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black 0%,
+          transparent 80%
+        );
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 68px 0;
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+
+      z-index: 1000;
+
+      border-bottom: 1px solid var(--line);
+
+      background:
+        rgba(7, 17, 31, 0.80);
+
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    nav {
+      min-height: 74px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
+      color: var(--text);
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+
+      gap: 28px;
+
+      list-style: none;
+
+      color: var(--muted);
+
+      font-size: 0.92rem;
+
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      transition:
+        color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height:
+        calc(100vh - 74px);
+
+      display: flex;
+
+      align-items: center;
+
+      padding: 72px 0;
+
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      right: -180px;
+      top: 80px;
+
+      width: 420px;
+      height: 420px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(201, 169, 110, 0.12);
+
+      box-shadow:
+        0 0 0 50px
+          rgba(201, 169, 110, 0.025),
+        0 0 0 100px
+          rgba(201, 169, 110, 0.015);
+
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.08fr
+        0.92fr;
+
+      gap: 84px;
+
+      align-items: center;
+    }
+
+    h1 {
+      font-size:
+        clamp(
+          4rem,
+          8vw,
+          7.2rem
+        );
+
+      line-height: 0.92;
+
+      letter-spacing: -0.055em;
+
+      font-weight: 760;
+
+      margin-bottom: 24px;
+
+      max-width: 760px;
+    }
+
+    .hero-role {
+      font-size: 1.18rem;
+
+      font-weight: 700;
+
+      color: #dbe4f0;
+
+      margin-bottom: 16px;
+    }
+
+    .hero-copy {
+      max-width: 700px;
+
+      color: var(--muted);
+
+      font-size: 1.08rem;
+
+      line-height: 1.8;
+
+      margin-bottom: 28px;
+    }
+
+    .hero-buttons {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding:
+        13px
+        21px;
+
+      border-radius: 10px;
+
+      font-size: 0.94rem;
+
+      font-weight: 750;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform:
+        translateY(-2px);
+    }
+
+    .btn-gold {
+      color: #08111f;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold-light),
+          var(--gold)
+        );
+
+      box-shadow:
+        0 12px 30px
+        rgba(201, 169, 110, 0.16);
+    }
+
+    .btn-outline {
+      color: var(--text);
+
+      border:
+        1px solid
+        rgba(255, 255, 255, 0.16);
+
+      background:
+        rgba(255, 255, 255, 0.03);
+    }
+
+    .btn-outline:hover {
+      border-color:
+        rgba(201, 169, 110, 0.55);
+
+      color:
+        var(--gold-light);
+    }
+
+
+    /* =========================
+       HEADSHOT
+    ========================== */
+
+    .portrait-area {
+      position: relative;
+
+      display: flex;
+
+      justify-content: center;
+    }
+
+    .portrait-frame {
+      position: relative;
+
+      width:
+        min(390px, 100%);
+
+      padding: 13px;
+
+      border:
+        1px solid
+        rgba(201, 169, 110, 0.35);
+
+      border-radius: 28px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255,255,255,0.08),
+          rgba(255,255,255,0.02)
+        );
+
+      box-shadow:
+        var(--shadow);
+    }
+
+    .portrait-frame::before {
+      content: "";
+
+      position: absolute;
+
+      inset:
+        -18px
+        18px
+        18px
+        -18px;
+
+      border:
+        1px solid
+        rgba(111, 143, 207, 0.18);
+
+      border-radius: 30px;
+
+      z-index: -1;
+    }
+
+    .headshot {
+      width: 100%;
+
+      height: 470px;
+
+      object-fit: cover;
+
+      object-position:
+        center top;
+
+      border-radius: 20px;
+
+      filter:
+        saturate(0.92)
+        contrast(1.03);
+    }
+
+
+    /* =========================
+       SECTION HEADERS
+    ========================== */
+
+    .section-kicker {
+      color: var(--gold);
+
+      font-size: 0.78rem;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.18em;
+
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size:
+        clamp(
+          2.3rem,
+          4vw,
+          3.7rem
+        );
+
+      line-height: 1.05;
+
+      letter-spacing: -0.04em;
+
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      max-width: 720px;
+
+      color: var(--muted);
+
+      font-size: 1.04rem;
+    }
+
+    .section-heading {
+      margin-bottom: 26px;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-card {
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(20, 36, 58, 0.94),
+          rgba(11, 23, 40, 0.94)
+        );
+
+      box-shadow:
+        var(--shadow);
+
+      padding: 38px;
+    }
+
+    .about-card p {
+      font-size: 1.13rem;
+
+      line-height: 1.9;
+
+      color: #c6d0de;
+
+      max-width: 1000px;
+    }
+
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills-table {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 9px;
+    }
+
+    .skill-box {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 68px;
+
+      padding:
+        12px
+        14px;
+
+      text-align: center;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 9px;
+
+      background:
+        rgba(16, 29, 48, 0.76);
+
+      color: #e9eef6;
+
+      font-size: 0.90rem;
+
+      font-weight: 700;
+
+      transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .skill-box:hover {
+      transform:
+        translateY(-3px);
+
+      border-color:
+        rgba(201, 169, 110, 0.38);
+
+      background:
+        rgba(20, 36, 58, 0.96);
+    }
+
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-section {
+      border-top:
+        1px solid
+        var(--line);
+
+      border-bottom:
+        1px solid
+        var(--line);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.018),
+          rgba(255, 255, 255, 0.005)
+        );
+    }
+
+    .projects-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 22px;
+    }
+
+    .project-card {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 500px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          160deg,
+          rgba(20, 36, 58, 0.96),
+          rgba(9, 20, 35, 0.96)
+        );
+
+      padding: 32px;
+
+      box-shadow:
+        var(--shadow);
+
+      transition:
+        transform 0.24s ease,
+        border-color 0.24s ease;
+    }
+
+    .project-card:hover {
+      transform:
+        translateY(-6px);
+
+      border-color:
+        rgba(201, 169, 110, 0.38);
+    }
+
+    .project-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 210px;
+      height: 210px;
+
+      border-radius: 50%;
+
+      right: -95px;
+      top: -95px;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(201,169,110,0.15),
+          transparent 66%
+        );
+    }
+
+    .project-type {
+      display: inline-flex;
+
+      width: fit-content;
+
+      padding:
+        7px
+        11px;
+
+      border-radius: 999px;
+
+      font-size: 0.73rem;
+
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+
+      color:
+        var(--gold-light);
+
+      border:
+        1px solid
+        rgba(201, 169, 110, 0.25);
+
+      background:
+        rgba(201, 169, 110, 0.06);
+
+      margin-bottom: 21px;
+    }
+
+    .project-card h3 {
+      font-size: 1.75rem;
+
+      line-height: 1.25;
+
+      letter-spacing: -0.025em;
+
+      margin-bottom: 8px;
+
+      max-width: 90%;
+    }
+
+    .project-meta {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+
+      margin-bottom: 18px;
+    }
+
+    .project-summary {
+      color: #b8c3d2;
+
+      margin-bottom: 18px;
+
+      line-height: 1.75;
+    }
+
+    .project-list {
+      list-style: none;
+
+      margin-bottom: 22px;
+    }
+
+    .project-list li {
+      position: relative;
+
+      padding-left: 20px;
+
+      margin-bottom: 12px;
+
+      color: #d2dae5;
+
+      line-height: 1.62;
+    }
+
+    .project-list li::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+
+      top: 0.7em;
+
+      width: 6px;
+
+      height: 6px;
+
+      border-radius: 50%;
+
+      background:
+        var(--gold);
+    }
+
+    .tags {
+      margin-top: auto;
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .tag {
+      padding:
+        7px
+        10px;
+
+      border:
+        1px solid
+        var(--line);
+
+      border-radius: 8px;
+
+      color: #aeb9c8;
+
+      background:
+        rgba(255, 255, 255, 0.025);
+
+      font-size: 0.78rem;
+
+      font-weight: 650;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-panel {
+      position: relative;
+
+      overflow: hidden;
+
+      display: grid;
+
+      grid-template-columns:
+        1.15fr
+        0.85fr;
+
+      gap: 42px;
+
+      align-items: center;
+
+      padding: 42px;
+
+      border-radius: 24px;
+
+      border:
+        1px solid
+        rgba(201, 169, 110, 0.20);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(19, 34, 55, 0.96),
+          rgba(8, 19, 33, 0.98)
+        );
+
+      box-shadow:
+        var(--shadow);
+    }
+
+    .contact-panel::after {
+      content: "";
+
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      right: -120px;
+
+      bottom: -150px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid
+        rgba(201, 169, 110, 0.12);
+
+      box-shadow:
+        0 0 0 45px
+        rgba(201, 169, 110, 0.018);
+    }
+
+    .contact-panel h2 {
+      font-size:
+        clamp(
+          2.2rem,
+          4vw,
+          3.6rem
+        );
+
+      line-height: 1.05;
+
+      letter-spacing: -0.04em;
+
+      margin-bottom: 12px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+
+      max-width: 620px;
+    }
+
+    .contact-actions {
+      display: flex;
+
+      justify-content: flex-end;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding:
+        28px
+        0
+        34px;
+
+      border-top:
+        1px solid
+        var(--line);
+
+      color: #7f8c9e;
+
+      font-size: 0.88rem;
+    }
+
+    .footer-row {
+      display: flex;
+
+      justify-content: center;
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .hero-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 50px;
+      }
+
+      .portrait-area {
+        order: -1;
+      }
+
+      .portrait-frame {
+        width: 330px;
+      }
+
+      .headshot {
+        height: 400px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-copy {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .skills-table {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-actions {
+        justify-content: flex-start;
+      }
+
+    }
+
+
+    @media (max-width: 650px) {
+
+      .nav-links {
+        gap: 14px;
+
+        font-size: 0.82rem;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      nav {
+        flex-direction: column;
+
+        padding: 14px 0;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      h1 {
+        font-size: 3.7rem;
+      }
+
+      .hero {
+        padding:
+          52px
+          0
+          62px;
+      }
+
+      .skills-table {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 8px;
+      }
+
+      .about-card,
+      .project-card,
+      .contact-panel {
+        padding: 25px;
+      }
+
+      .portrait-frame {
+        width: 285px;
+      }
+
+      .headshot {
+        height: 350px;
+      }
+
+      .contact-actions {
+        flex-direction: column;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          class="logo"
+          href="#home"
+        >
+          Daniel <span>Manuli</span>
+        </a>
+
+
+        <ul class="nav-links">
+
+          <li>
+            <a href="#about">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="#skills">
+              Skills
+            </a>
+          </li>
+
+          <li>
+            <a href="#projects">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="#contact">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <main>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section
+      class="hero"
+      id="home"
+    >
+
+      <div class="container hero-grid">
+
+
+        <div>
+
+          <h1>
+            Daniel<br>
+            Manuli
+          </h1>
+
+
+          <p class="hero-role">
+            Junior Finance Major at Rutgers Business School–New Brunswick
+          </p>
+
+
+          <!-- Required one-sentence personal statement -->
+          <p class="hero-copy">
+            Junior Finance major at Rutgers Business School–New Brunswick focused on building a career in private markets and alternative investing.
+          </p>
+
+
+          <div class="hero-buttons">
+
+
+            <a
+              class="btn btn-gold"
+              href="#projects"
+            >
+              View Selected Work
+            </a>
+
+
+            <a
+              class="btn btn-outline"
+              href="Daniel-Manuli-Resume.pdf"
+              download
+            >
+              Resume
+            </a>
+
+
+            <a
+              class="btn btn-outline"
+              href="https://www.linkedin.com/in/daniel-manuli-521392326"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+
+            <a
+              class="btn btn-outline"
+              href="mailto:daniel.manuli@rutgers.edu"
+            >
+              Email
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <div class="portrait-area">
+
+          <div class="portrait-frame">
+
+            <img
+              src="headshot.jpg"
+              alt="Professional headshot of Daniel Manuli"
+              class="headshot"
+            >
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section
+      class="section"
+      id="about"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Profile
+          </div>
+
+
+          <h2 class="section-title">
+            About Me
+          </h2>
+
+        </div>
+
+
+
+        <div class="about-card">
+
+          <p>
+            I'm a junior Finance major at Rutgers Business School–New Brunswick with a strong interest in financial services and investing. I’m analytical, motivated, and proactive, with hands-on experience in budgeting, financial planning, operations, and leadership through work with small businesses and student organizations. Through these roles, I’ve developed the ability to analyze complex situations, support strategic decision-making, and positively impact those around me.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section
+      class="section"
+      id="skills"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Capabilities
+          </div>
+
+
+          <h2 class="section-title">
+            Skills & Tools
+          </h2>
+
+
+          <p class="section-intro">
+            Technical and professional skills developed through investment experience, coursework, business ownership, and project work.
+          </p>
+
+        </div>
+
+
+
+        <div class="skills-table">
+
+          <div class="skill-box">
+            Microsoft Excel
+          </div>
+
+          <div class="skill-box">
+            Microsoft PowerPoint
+          </div>
+
+          <div class="skill-box">
+            Financial Modeling
+          </div>
+
+          <div class="skill-box">
+            DCF Analysis
+          </div>
+
+          <div class="skill-box">
+            Comparable Company Analysis
+          </div>
+
+          <div class="skill-box">
+            FactSet
+          </div>
+
+          <div class="skill-box">
+            Capital IQ
+          </div>
+
+          <div class="skill-box">
+            Investment Research
+          </div>
+
+          <div class="skill-box">
+            Budgeting & Cost Control
+          </div>
+
+          <div class="skill-box">
+            Market Analysis
+          </div>
+
+          <div class="skill-box">
+            AI Automation
+          </div>
+
+          <div class="skill-box">
+            Strategic Analysis
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section
+      class="section projects-section"
+      id="projects"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div class="section-kicker">
+            Selected Work
+          </div>
+
+
+          <h2 class="section-title">
+            Projects
+          </h2>
+
+
+          <p class="section-intro">
+            Selected work across operational consulting, equity research, valuation, and strategic analysis.
+          </p>
+
+        </div>
+
+
+
+        <div class="projects-grid">
+
+
+          <!-- PROJECT 1 -->
+
+          <article class="project-card">
+
+
+            <span class="project-type">
+              Consulting & Analytics
+            </span>
+
+
+            <h3>
+              Topgolf Operational Strategy & Analytics
+            </h3>
+
+
+            <p class="project-meta">
+              4-Person Consulting Team • Rutgers University
+            </p>
+
+
+            <p class="project-summary">
+              A semester-long consulting project focused on identifying operational inefficiencies affecting Speed of Service at Topgolf's Edison, New Jersey location.
+            </p>
+
+
+            <ul class="project-list">
+
+              <li>
+                Analyzed Speed of Service inefficiencies affecting customer satisfaction and labor costs.
+              </li>
+
+              <li>
+                Identified staffing shortages, employee turnover, and labor-demand misalignment through interviews and research.
+              </li>
+
+              <li>
+                Developed data-driven recommendations using SMART goals, labor analytics, and incentive strategies to improve efficiency and employee morale.
+              </li>
+
+            </ul>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Consulting
+              </span>
+
+              <span class="tag">
+                Operations
+              </span>
+
+              <span class="tag">
+                Data Analysis
+              </span>
+
+              <span class="tag">
+                Strategy
+              </span>
+
+              <span class="tag">
+                Teamwork
+              </span>
+
+            </div>
+
+
+          </article>
+
+
+
+          <!-- PROJECT 2 -->
+
+          <article class="project-card">
+
+
+            <span class="project-type">
+              Equity Research & Valuation
+            </span>
+
+
+            <h3>
+              Ryan Specialty Holdings Stock Pitch
+            </h3>
+
+
+            <p class="project-meta">
+              Stone Point Capital • July 2026
+            </p>
+
+
+            <p class="project-summary">
+              A comprehensive equity research and valuation project evaluating Ryan Specialty Holdings, Inc. and developing an investment recommendation.
+            </p>
+
+
+            <ul class="project-list">
+
+              <li>
+                Developed a HOLD investment thesis based on organic growth, E&S market tailwinds, leverage, and valuation.
+              </li>
+
+              <li>
+                Synthesized DCF and peer-comparable valuation outputs to assess potential upside and downside.
+              </li>
+
+              <li>
+                Presented a 15-page investment pitch covering business fundamentals, financial performance, catalysts, risks, and valuation.
+              </li>
+
+            </ul>
+
+
+            <div class="tags">
+
+              <span class="tag">
+                Equity Research
+              </span>
+
+              <span class="tag">
+                DCF
+              </span>
+
+              <span class="tag">
+                Comparable Companies
+              </span>
+
+              <span class="tag">
+                Financial Modeling
+              </span>
+
+              <span class="tag">
+                Investment Analysis
+              </span>
+
+            </div>
+
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section
+      class="section"
+      id="contact"
+    >
+
+      <div class="container">
+
+
+        <div class="contact-panel">
+
+
+          <div>
+
+            <div class="section-kicker">
+              Contact
+            </div>
+
+
+            <h2>
+              Let's Connect
+            </h2>
+
+
+            <p>
+              Email or call me using the options below.
+            </p>
+
+          </div>
+
+
+
+          <div class="contact-actions">
+
+
+            <a
+              class="btn btn-gold"
+              href="mailto:daniel.manuli@rutgers.edu"
+            >
+              Email
+            </a>
+
+
+            <a
+              class="btn btn-outline"
+              href="tel:+12034244977"
+            >
+              Phone
+            </a>
+
+
+            <a
+              class="btn btn-outline"
+              href="https://www.linkedin.com/in/daniel-manuli-521392326"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="container footer-row">
+
+      <span>
+        © 2026 Daniel Manuli
+      </span>
+
+    </div>
+
+  </footer>
+
+
+</body>
+</html>
